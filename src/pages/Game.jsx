@@ -1,7 +1,7 @@
-import SingleTarget from "../components/SingleTarget"
-import { useState, useEffect } from "react"
-import { FaClock, FaCrosshairs, FaFireAlt } from "react-icons/fa"
-import GameOver from "../components/GameOver"
+import SingleTarget from '../components/SingleTarget'
+import { useState, useEffect } from 'react'
+import { FaClock, FaCrosshairs, FaFireAlt } from 'react-icons/fa'
+import GameOver from '../components/GameOver'
 
 const Game = ({
   score,
@@ -57,6 +57,7 @@ const Game = ({
       if (secs > 0) {
         setSpm(Math.floor((score / (60 - secs)) * 60))
       } else {
+        setSpm(0)
         return
       }
     }
@@ -74,29 +75,29 @@ const Game = ({
   }, [secs])
 
   return (
-    <div className="game-wrapper" id="game-table">
+    <div className='game-wrapper' id='game-table'>
       <div
-        className="scoreboard"
+        className='scoreboard flex-center-center'
         style={{ borderBottom: `0.5vh solid ${theme}` }}
       >
-        <div className="score-count">
+        <div className='score-count flex-center-center'>
           <FaCrosshairs /> {score}
         </div>
         {isChallenge ? (
           <>
             {secs > 0 ? (
-              <div className="countdown">
+              <div className='countdown flex-center-center'>
                 <FaClock /> {secs}s
               </div>
             ) : (
-              ""
+              ''
             )}
-            <div className="spm-count">
+            <div className='spm-count flex-center-center'>
               <FaFireAlt /> {spm} SPM
             </div>
           </>
         ) : (
-          ""
+          ''
         )}
       </div>
       {gameOver ? (

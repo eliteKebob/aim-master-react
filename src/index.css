@@ -8,11 +8,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
-  
 }
 
 body {
   background-color: #181818;
+}
+
+.flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
@@ -22,19 +27,15 @@ h1 {
 .landing {
   width: 100vw;
   height: 100vh;
-  display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
   margin-top: 5vh;
 }
 
-.set-size,.set-target-amount,.set-theme {
+.set-size,
+.set-target-amount,
+.set-theme {
   height: 10vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 }
 
 .set-size {
@@ -42,16 +43,18 @@ h1 {
   margin-top: 3vh;
 }
 
-.set-size p,.set-target-amount p,.set-theme p {
+.set-size p,
+.set-target-amount p,
+.set-theme p {
   font-weight: 700;
   font-size: 3vh;
 }
 
-.set-size input,.set-target-amount input {
+.set-size input,
+.set-target-amount input {
   outline: none;
   border: none;
   border-radius: 1vh;
- 
   color: black;
   font-weight: 700;
   font-size: 3vh;
@@ -61,13 +64,12 @@ h1 {
 }
 
 .st-example {
-  
-border-radius: 50%;
-transition: 0.5s all;
-margin-left: 1vw;
+  border-radius: 50%;
+  transition: 0.5s all;
+  margin-left: 1vw;
 }
 
-.theme-lightblue,.theme-red,.theme-green,.theme-yellow,.theme-white {
+.theme {
   height: 5vh;
   width: 5vh;
   border-radius: 50%;
@@ -78,9 +80,6 @@ margin-left: 1vw;
 .start-game {
   margin-top: 3vh;
   width: 30vw;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
 }
 
@@ -92,9 +91,6 @@ margin-left: 1vw;
   font-size: 3vh;
   font-weight: 700;
   color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .cam-text {
@@ -111,18 +107,12 @@ margin-left: 1vw;
 .scoreboard {
   height: 8vh;
   width: 100vw;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
 }
 
-.score-count,.countdown,.spm-count {
+.score-count,
+.countdown,
+.spm-count {
   width: 33.3vw;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   font-weight: 700;
   font-size: 4vh;
   transition: 0.2s all;
@@ -135,25 +125,17 @@ margin-left: 1vw;
 .single-target {
   display: block;
   position: absolute;
-border-radius: 50%;
-transition: 0.25s all;
+  border-radius: 50%;
+  transition: 0.25s all;
 }
 
 .header {
   width: 100vw;
   height: 10vh;
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 }
 
 .brand {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
- 
   cursor: pointer;
   width: 30vw;
   height: 10vh;
@@ -161,26 +143,20 @@ transition: 0.25s all;
 
 .brand img {
   height: 7vh;
-
   margin: 0 0.5vw;
 }
 
 .brand h1 {
   color: black;
- 
 }
 
 .links {
   height: 10vh;
   width: 30vw;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: flex-end;
 }
 
 .links svg {
- 
   color: black;
   font-size: 5vh;
   margin-right: 2vw;
@@ -192,46 +168,32 @@ transition: 0.25s all;
   position: absolute;
   top: 0;
   right: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .go-content {
   border-radius: 1vh;
-  width: 75vw;
-  height: 75vh;
+  width: 90vw;
   background-color: #181818;
   transition: 0.3s all;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
 }
 
 .btn-group {
   width: 100%;
-  display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
-  align-items: center;
-  margin-bottom: 2vh;
+  margin: 2vh 0;
 }
 
 .go-btn {
   border-radius: 1vh;
   padding: 1vh;
   cursor: pointer;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
   width: 23vw;
-  font-size: 3vh;
+  font-size: 2.5vh;
 }
 
 .go-btn svg {
@@ -245,36 +207,26 @@ transition: 0.25s all;
 }
 
 .go-stats {
-  width: 70vw;
+  width: 85vw;
   border-radius: 1vh;
-  height: 56vh;
-  margin-top: 2vh;
-  display: flex;
+  margin: 2vh 0;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   background-color: #181818;
 }
 
 .stat-group {
-  width: 67vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1vh;
-  height: 35vh;
+  width: 100%;
+  margin: 2vh 0;
 }
 
 .go-stat {
-  width: 32vw;
+  width: 50%;
   margin: 0 1vw;
   border-radius: 1vh;
   height: 33vh;
-  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
 }
 
 .go-stat svg {
@@ -289,14 +241,10 @@ transition: 0.25s all;
 }
 
 .settings-group {
-  width: 67vw;
-  height: 9vh;
   border-radius: 1vh;
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5vh 0;
+  padding: 1vh 0;
+  margin: 1vh 0;
 }
 
 .settings-group h4 {
@@ -305,10 +253,7 @@ transition: 0.25s all;
 
 .sg-info {
   width: 100%;
-  display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
-  align-items: center;
 }
 
 .sg-info p {
@@ -320,17 +265,12 @@ transition: 0.25s all;
 
 .aimmaster-brand {
   border-radius: 1vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   color: black;
-  width: 67vw;
   font-size: 5vh;
-  margin-bottom: 2vh;
+  padding: 1vh 4vw;
 }
 
 .aimmaster-brand img {
-height: 6vh;
-margin: 0 0.5vw;
+  height: 6vh;
+  margin: 0 0.5vw;
 }

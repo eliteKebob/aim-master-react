@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useRef } from 'react'
 
 const SingleTarget = ({
   target,
@@ -8,6 +8,7 @@ const SingleTarget = ({
   score,
   theme,
 }) => {
+  let targetRef = useRef()
   const handleHover = () => {
     if (gameRunning) {
       stylist()
@@ -20,8 +21,8 @@ const SingleTarget = ({
   const stylist = () => {
     let rndTop = Math.floor(Math.random() * 77) + 20
     let rndRight = Math.floor(Math.random() * 91) + 5
-    document.getElementById(target).style.top = `${rndTop}%`
-    document.getElementById(target).style.right = `${rndRight}%`
+    targetRef.current.style.top = `${rndTop}%`
+    targetRef.current.style.right = `${rndRight}%`
   }
 
   useEffect(() => {
@@ -35,8 +36,8 @@ const SingleTarget = ({
 
   return (
     <div
-      className="single-target"
-      id={target}
+      className='single-target'
+      ref={targetRef}
       onMouseOver={() => handleHover()}
       style={{
         width: `${targetSize}vh`,
