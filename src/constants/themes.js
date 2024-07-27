@@ -1,0 +1,17 @@
+export const THEMES = [
+  "lightskyblue",
+  "violet",
+  "lime",
+  "gold",
+  "thistle",
+  "white",
+  "chocolate",
+  "crimson",
+  "cornflowerblue",
+  "darksalmon",
+  "indigo",
+  "palevioletred",
+  "sienna",
+  "teal",
+  "tomato",
+];

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from "react";
 
 const SingleTarget = ({
   target,
@@ -8,35 +8,35 @@ const SingleTarget = ({
   score,
   theme,
 }) => {
-  let targetRef = useRef()
+  let targetRef = useRef();
   const handleHover = () => {
     if (gameRunning) {
-      stylist()
-      setScore(score + 1)
+      stylist();
+      setScore(score + 1);
     } else {
-      return
+      return;
     }
-  }
+  };
 
   const stylist = () => {
-    let rndTop = Math.floor(Math.random() * 77) + 20
-    let rndRight = Math.floor(Math.random() * 91) + 5
-    targetRef.current.style.top = `${rndTop}%`
-    targetRef.current.style.right = `${rndRight}%`
-  }
+    let rndTop = Math.floor(Math.random() * 77) + 20;
+    let rndRight = Math.floor(Math.random() * 91) + 5;
+    targetRef.current.style.top = `${rndTop}%`;
+    targetRef.current.style.right = `${rndRight}%`;
+  };
 
   useEffect(() => {
     if (gameRunning) {
-      stylist()
+      stylist();
     } else {
-      return
+      return;
     }
     // eslint-disable-next-line
-  }, [])
+  }, []);
 
   return (
     <div
-      className='single-target'
+      className="single-target"
       ref={targetRef}
       onMouseOver={() => handleHover()}
       style={{
@@ -45,6 +45,6 @@ const SingleTarget = ({
         backgroundColor: theme,
       }}
     ></div>
-  )
-}
-export default SingleTarget
+  );
+};
+export default SingleTarget;

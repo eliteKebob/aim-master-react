@@ -1,7 +1,7 @@
-import SingleTarget from '../components/SingleTarget'
-import { useState, useEffect } from 'react'
-import { FaClock, FaCrosshairs, FaFireAlt } from 'react-icons/fa'
-import GameOver from '../components/GameOver'
+import SingleTarget from "../components/SingleTarget";
+import { useState, useEffect } from "react";
+import { FaClock, FaCrosshairs, FaFireAlt } from "react-icons/fa";
+import GameOver from "../components/GameOver";
 
 const Game = ({
   score,
@@ -17,87 +17,87 @@ const Game = ({
   setGameOver,
   setGameRunning,
 }) => {
-  const [targetsArr, setTargetsArr] = useState([0, 1, 2, 3, 4, 5, 6])
-  const [secs, setSecs] = useState(60)
-  const [now, setNow] = useState(0)
-  const [spm, setSpm] = useState(0)
+  const [targetsArr, setTargetsArr] = useState([0, 1, 2, 3, 4, 5, 6]);
+  const [secs, setSecs] = useState(5);
+  const [now, setNow] = useState(0);
+  const [spm, setSpm] = useState(0);
 
   useEffect(() => {
     if (isChallenge === true) {
-      setStartTime(new Date().getTime())
-      setScore(0)
-      setSpm(0)
+      setStartTime(new Date().getTime());
+      setScore(0);
+      setSpm(0);
     }
     // eslint-disable-next-line
-  }, [])
+  }, []);
 
   useEffect(() => {
-    let newTargetsArr = []
-    for (let i = 0; i < targets; i++) newTargetsArr.push(i)
-    setTargetsArr(newTargetsArr)
+    let newTargetsArr = [];
+    for (let i = 0; i < targets; i++) newTargetsArr.push(i);
+    setTargetsArr(newTargetsArr);
     // eslint-disable-next-line
-  }, [targets])
+  }, [targets]);
 
   var x = setInterval(function () {
     if (!gameOver) {
-      setNow(new Date().getTime())
-      clearInterval(x)
+      setNow(new Date().getTime());
+      clearInterval(x);
     }
-  }, 1000)
+  }, 1000);
 
   useEffect(() => {
-    let countDownDate = startTime + 60000
-    let distance = countDownDate - now
-    setSecs(Math.floor((distance % (1000 * 60)) / 1000))
+    let countDownDate = startTime + 60000;
+    let distance = countDownDate - now;
+    setSecs(Math.floor((distance % (1000 * 60)) / 1000));
     // eslint-disable-next-line
-  }, [now])
+  }, [now]);
 
   useEffect(() => {
     if (isChallenge === true) {
       if (secs > 0) {
-        setSpm(Math.floor((score / (60 - secs)) * 60))
+        setSpm(Math.floor((score / (60 - secs)) * 60));
       } else {
-        setSpm(0)
-        return
+        setSpm(0);
+        return;
       }
     }
     // eslint-disable-next-line
-  }, [score])
+  }, [score]);
 
   useEffect(() => {
     if (isChallenge === true) {
       if (now - startTime > 60000) {
-        setGameOver(true)
+        setGameOver(true);
       }
     }
 
     // eslint-disable-next-line
-  }, [secs])
+  }, [secs]);
 
   return (
-    <div className='game-wrapper' id='game-table'>
+    <div className="game-wrapper" id="game-table">
       <div
-        className='scoreboard flex-center-center'
+        className="scoreboard flex-center-center"
         style={{ borderBottom: `0.5vh solid ${theme}` }}
       >
-        <div className='score-count flex-center-center'>
+        <div className="score-count flex-center-center">
           <FaCrosshairs /> {score}
         </div>
         {isChallenge ? (
           <>
             {secs > 0 ? (
-              <div className='countdown flex-center-center'>
+              <div className="countdown flex-center-center">
                 <FaClock /> {secs}s
               </div>
             ) : (
-              ''
+              ""
             )}
-            <div className='spm-count flex-center-center'>
+            <div className="spm-count flex-center-center">
               <FaFireAlt /> {spm} SPM
             </div>
           </>
         ) : (
-          ''
+          ""
         )}
       </div>
       {gameOver ? (
@@ -129,7 +129,7 @@ const Game = ({
         </>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Game
+export default Game;

@@ -1,20 +1,20 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { useState } from "react"
-import Header from "./components/Header"
-import Game from "./pages/Game"
-import Landing from "./pages/Landing"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import Header from "./components/Header";
+import Game from "./pages/Game";
+import Landing from "./pages/Landing";
 
 function App() {
-  const [score, setScore] = useState(0)
-  const [targetSize, setTargetSize] = useState(3)
-  const [targets, setTargets] = useState(7)
-  const [theme, setTheme] = useState("lightskyblue")
-  const [gameRunning, setGameRunning] = useState(false)
-  const [isChallenge, setIsChallenge] = useState(false)
-  const [startTime, setStartTime] = useState("")
-  const [gameOver, setGameOver] = useState(false)
+  const [score, setScore] = useState(0);
+  const [targetSize, setTargetSize] = useState(3);
+  const [targets, setTargets] = useState(7);
+  const [theme, setTheme] = useState("lightskyblue");
+  const [gameRunning, setGameRunning] = useState(false);
+  const [isChallenge, setIsChallenge] = useState(false);
+  const [startTime, setStartTime] = useState("");
+  const [gameOver, setGameOver] = useState(false);
 
-  document.getElementById("root").style.color = theme
+  document.getElementById("root").style.color = theme;
 
   return (
     <>
@@ -63,7 +63,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
