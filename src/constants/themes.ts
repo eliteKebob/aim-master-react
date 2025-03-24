@@ -1,0 +1,17 @@
+export enum Themes {
+  LightSkyBlue = "lightskyblue",
+  Violet = "violet",
+  Lime = "lime",
+  Gold = "gold",
+  Thistle = "thistle",
+  White = "white",
+  Chocolate = "chocolate",
+  Crimson = "crimson",
+  CornflowerBlue = "cornflowerblue",
+  DarkSalmon = "darksalmon",
+  BlueViolet = "blueviolet",
+  PaleVioletRed = "palevioletred",
+  Sienna = "sienna",
+  Teal = "teal",
+  Tomato = "tomato",
+}
